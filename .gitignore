@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -7,17 +8,38 @@
 
 # testing
 /coverage
+=======
+# dependencies
+/node_modules
+>>>>>>> f51b5c03dabbf8cab8b509ace78e1de601f0faab
 
 # production
 /build
 
 # misc
 .DS_Store
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> f51b5c03dabbf8cab8b509ace78e1de601f0faab
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+>>>>>>> f51b5c03dabbf8cab8b509ace78e1de601f0faab
