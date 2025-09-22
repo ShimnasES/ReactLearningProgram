@@ -35,6 +35,7 @@ function AppLayout() {
     setPriceRange,
     query,
     setQuery,
+    
   };
 
   return (
