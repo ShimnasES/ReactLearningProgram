@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
-export default function ProductFilter({ applyFilters }) {
+export default function ProductFilter({ applyFilters,clearFilters }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -8,10 +8,11 @@ export default function ProductFilter({ applyFilters }) {
   };
 
   const clearFilter = () => {
-    setSortBy("");
+    setSortBy("none");
     setFilter("none");
     setPriceRange([0, 1000]);
     setIsDrawerOpen(false);
+    clearFilters();
   };
 
   const { filter, setFilter, sortBy, setSortBy, priceRange, setPriceRange } =
