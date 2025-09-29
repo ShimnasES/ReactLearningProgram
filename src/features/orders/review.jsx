@@ -10,9 +10,7 @@ export default function OrderReview({ itemId }) {
   const [reviewId, setReviewId] = useState(null);
 
   const dispatch = useDispatch();
-//   const currentState = useSelector((state) => state.order);
-//   console.log(currentState);
-  //   if(currentState){}
+
   const handleSubmit = () => {
     if (rating === 0 || comment.trim() === "") return;
 
@@ -102,7 +100,7 @@ export default function OrderReview({ itemId }) {
                 alignItems: "center",
               }}
             >
-              {console.log("review", review)}
+             
               <div>
                 <div className="review-stars">
                   {"★".repeat(review.rating)}
@@ -122,7 +120,7 @@ export default function OrderReview({ itemId }) {
                     cursor: "pointer",
                   }}
                 >
-                  <i className="fas fa-edit black"></i>
+                  <i className="fas fa-edit black" data-testid="edit-icon"></i>
                 </button>
 
                 <button

@@ -32,6 +32,10 @@ export default function Home() {
     setFiltersApplied((prev) => !prev);
   }
 
+  function clearFilters() {
+    setFiltersApplied(false);
+  }
+
   return (
     <>
       <ProductFilter
@@ -42,6 +46,7 @@ export default function Home() {
         setPriceRange={setPriceRange}
         setQuery={setQuery}
         applyFilters={ApplyFilters}
+        clearFilters={clearFilters}
       />
 
       <ProductList products={productList} setFilter={filter} />

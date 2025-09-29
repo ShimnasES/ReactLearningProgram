@@ -33,7 +33,7 @@ export default function CartItem({ cartItem, actions }) {
                 className="btn delete-btn"
                 onClick={() => dispatch(deleteFromCart(cartItem.id))}
               >
-                <i className="fas fa-trash"></i>
+                <i className="fas fa-trash" data-testid="delete-icon" ></i>
               </button>
             )}
 
@@ -42,7 +42,7 @@ export default function CartItem({ cartItem, actions }) {
                 className="btn delete-btn"
                 onClick={() => dispatch(decreaseItemQuantity(cartItem.id))}
               >
-                <i className="fas fa-minus"></i>
+                <i className="fas fa-minus" data-testid="minus-icon" ></i>
               </button>
             )}
 
@@ -51,7 +51,7 @@ export default function CartItem({ cartItem, actions }) {
               className="btn add-btn"
               onClick={() => dispatch(increaseItemQuantity(cartItem.id))}
             >
-              <i className="fas fa-plus"></i>
+              <i className="fas fa-plus" data-testid="plus-icon" ></i>
             </button>
           </div>
         )}
