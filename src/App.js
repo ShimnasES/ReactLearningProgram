@@ -1,13 +1,16 @@
-import Home from "./ui/home";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/appLayout";
 import Error from "./ui/error";
 import "./index.css";
-import Cart from "./features/cart/cart";
-import Login from "./features/users/login";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import Edit from "./features/users/edit";
-import OrderList from "./features/orders/orderList";
+import { lazy, Suspense } from 'react';
+import Loader from './ui/loader';
+
+const Home = lazy(() => import('./ui/home'));
+const Cart = lazy(() => import('./features/cart/cart'));
+const Login = lazy(() => import('./features/users/login'));
+const Edit = lazy(() => import('./features/users/edit'));
+const OrderList = lazy(() => import('./features/orders/orderList'));
 
 const router = createBrowserRouter([
   {
@@ -21,24 +24,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Suspense fallback={<Loader />}><Home /></Suspense>,
         errorElement: <Error />,
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: <Suspense fallback={<Loader />}><Cart /></Suspense>,
         errorElement: <Error />,
       },
       {
         path: "/Orders",
-        element: <OrderList />,
+        element: <Suspense fallback={<Loader />}><OrderList /></Suspense>,
         errorElement: <Error />,
       },
     ],
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <Suspense fallback={<Loader />}><Login /></Suspense>,
     errorElement: <Error />,
   },
   {
@@ -46,7 +49,7 @@ const router = createBrowserRouter([
     path: "/Edit",
     element:(
        <ProtectedRoute>
-        <Edit />
+        <Suspense fallback={<Loader />}><Edit /></Suspense>
       </ProtectedRoute>
     ),
     errorElement: <Error />,

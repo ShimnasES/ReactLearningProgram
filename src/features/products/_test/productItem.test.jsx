@@ -8,15 +8,30 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Product from "../productItem";
 
 //mocking
-jest.mock("../ProductReview", () => ({ rating }) => (
-  <div data-testid="product-review">Rating: {rating}</div>
-));
-jest.mock("../productDetails", () => ({ id, handleShowPopup }) => (
-  <div data-testid="product-description">
-    Product Description for ID: {id}
-    <button onClick={() => handleShowPopup(false)}>Close</button>
-  </div>
-));
+jest.mock("../ProductReview", () => {
+  const MockProductReview = ({ rating }) => (
+    <div data-testid="product-review">Rating: {rating}</div>
+  );
+  MockProductReview.displayName = "MockProductReview";
+  return {
+    __esModule: true,
+    default: MockProductReview
+  };
+});
+
+jest.mock("../productDetails", () => {
+  const MockProductDetails = ({ id, handleShowPopup }) => (
+    <div data-testid="product-description">
+      Product Description for ID: {id}
+      <button onClick={() => handleShowPopup(false)}>Close</button>
+    </div>
+  );
+  MockProductDetails.displayName = "MockProductDetails";
+  return {
+    __esModule: true,
+    default: MockProductDetails
+  };
+});
 
 //describe
 describe("Product details Component", () => {

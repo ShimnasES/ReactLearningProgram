@@ -28,7 +28,7 @@ export default function ProductFilter({ applyFilters,clearFilters }) {
         <div className={`drawer ${isDrawerOpen ? "open" : ""}`}>
           <h4 className="price-header">Shop by category</h4>
 
-          <div class="filter-group">
+          <div className="filter-group">
             <select
               className="select-dropdown"
               value={filter}
@@ -68,7 +68,7 @@ export default function ProductFilter({ applyFilters,clearFilters }) {
             />
           </div>
 
-          <div class="filter-group">
+          <div className="filter-group">
             <h4 className="price-header">Sort by Price</h4>
 
             <select

@@ -13,7 +13,14 @@ const mockStore = configureMockStore();
 const store = mockStore({});
 
 // Mock ProductReview child component to simplify test
-jest.mock("../productReview", () => () => <div data-testid="product-review" />);
+jest.mock("../productReview", () => {
+  const MockProductReview = () => <div data-testid="product-review" />;
+  MockProductReview.displayName = "MockProductReview";
+  return {
+    __esModule: true,
+    default: MockProductReview
+  };
+});
 
 describe("ProductDescription", () => {
   const fakeProduct = {

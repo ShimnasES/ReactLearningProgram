@@ -56,7 +56,7 @@ export default function CartItem({ cartItem, actions }) {
           </div>
         )}
 
-        {!actions && <OrderReview itemId={cartItem.id} />}
+        {!actions && <OrderReview itemId={cartItem.id}  />}
       </div>
     </>
   );

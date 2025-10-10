@@ -9,9 +9,17 @@ import { useSelector } from "react-redux";
 import * as reactRedux from 'react-redux';
 
 // Mock CartItem to isolate OrderList testing
-jest.mock("../../cart/cartItem", () => ({ cartItem, actions }) => (
-  <div data-testid="cart-item">{cartItem.title}</div>
-));
+jest.mock("../../cart/cartItem", () => {
+  const MockCartItem = ({ cartItem, actions }) => (
+    <div data-testid="cart-item">{cartItem.title}</div>
+  );
+  MockCartItem.displayName = "MockCartItem";
+  return {
+    __esModule: true,
+    default: MockCartItem
+  };
+});
+
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
