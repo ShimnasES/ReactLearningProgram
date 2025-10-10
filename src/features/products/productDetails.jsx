@@ -64,16 +64,16 @@ export default function ProductDescription({ id, handleShowPopup }) {
         <p className="product-description-details">{product.description}</p>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <p className="product-description-price">
-            <strong>Price:</strong> ${product.price}
+            <strong>Price:</strong> <span data-testid="product-price"> ${product.price}</span>
           </p>
           <p className="product-description-category">
-            <strong>Product Category </strong>:{product.category}
+            <strong>Product Category </strong>: <span data-testid="product-category"> {product.category}</span>
           </p>
 
           <div className="product-description-rating">
             <ProductReview rating={product.rating} />
           </div>
-          <button
+          <button 
             style={{ marginTop: "10px" }}
             className="add-to-cart-btn"
             onClick={() => addItemToCart(product)}

@@ -68,7 +68,8 @@ export default function Navbar({
           </span>
         )}
       </p>
-
+      <p className="user-info">Hey, {userInfo?.name?.split(" ")?.[0]}</p>
+ 
       <div className="navbar-right">
         <div
           className="user-avatar-fallback"

@@ -42,8 +42,13 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
+
     path: "/Edit",
-    element: <Edit />,
+    element:(
+       <ProtectedRoute>
+        <Edit />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
   },
 ]);

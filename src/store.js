@@ -5,6 +5,7 @@ import productReducer from "./features/products/productSlice";
 import commonReducer from "./utility/commonSlice";
 import orderReducer from "./features/orders/orderSlice";
 import { productSaga } from "./saga/productSaga";
+import loggerMiddleware  from "./middleware/loggerMiddleware";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,7 +19,7 @@ const store = configureStore({
 
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
+    getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware,loggerMiddleware),
 });
 sagaMiddleware.run(productSaga);
 
