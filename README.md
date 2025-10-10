@@ -1,75 +1,83 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Stock Pit Store Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React + Redux toolkit application for managing a store, including cart, orders, products, and user authentication. Features Redux Saga for async flows and custom middleware for logging user activity.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Product listing, filtering, and details
+- Cart management (add, remove, update quantity)
+- Order placement and review system
+- User authentication (login, edit profile)
+- Redux state management with toolkit slices
+- Redux Saga for async product fetching
+- Custom logger middleware for user actions
+- Unit tests with Jest and React Testing Library
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+  features/
+    cart/
+    orders/
+    products/
+    users/
+  middleware/
+  saga/
+  services/
+  ui/
+  utility/
+  constants/
+  App.js
+  store.js
+  index.js
+public/
+  index.html
+  logoIcon.svg
+  ...
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v16+ recommended)
+- npm
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### `npm run eject`
+### Running Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+npm test
+```
+Runs Jest unit tests in watch mode.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Key Files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [`src/store.js`](src/store.js): Configures Redux store, saga, and middleware.
+- [`src/App.js`](src/App.js): Main app component and router.
+- [`src/features/products/productSlice.js`](src/features/products/productSlice.js): Product state management.
+- [`src/features/cart/cartSlice.js`](src/features/cart/cartSlice.js): Cart state management.
+- [`src/features/orders/orderSlice.js`](src/features/orders/orderSlice.js): Orders and reviews state.
+- [`src/saga/productSaga.js`](src/saga/productSaga.js): Saga for product fetching.
+- [`src/middleware/loggerMiddleware.jsx`](src/middleware/loggerMiddleware.jsx): Logs user actions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Testing
 
-## Learn More
+Unit tests are located in `_test` or `_tests` folders. Example:
+- [`src/features/products/_test/productList.test.jsx`](src/features/products/_test/productList.test.jsx)
+- [`src/features/cart/_tests/cartItem.test.jsx`](src/features/cart/_tests/cartItem.test.jsx)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# ReactLearningProgram
-React learning program
->>>>>>> f51b5c03dabbf8cab8b509ace78e1de601f0faab
