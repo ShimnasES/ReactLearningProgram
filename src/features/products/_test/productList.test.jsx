@@ -7,9 +7,16 @@ import { render, screen } from '@testing-library/react';
 import ProductList from '../productList';
 
 // Mock Product component to isolate ProductList test
-jest.mock('../productItem', () => ({ product }) => (
-  <div data-testid="product-item">{product.title}</div>
-));
+jest.mock('../productItem', () => {
+  const MockProductItem = ({ product }) => (
+    <div data-testid="product-item">{product.title}</div>
+  );
+  MockProductItem.displayName = 'MockProductItem';
+  return {
+    __esModule: true,
+    default: MockProductItem
+  };
+});
 
 describe('ProductList component', () => {
   test('renders no products message when list is empty', () => {

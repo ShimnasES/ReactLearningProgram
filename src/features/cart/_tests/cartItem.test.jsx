@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import CartItem from '../CartItem';
 
@@ -13,7 +12,11 @@ jest.mock('react-redux', () => ({
 }));
 
 // Mock OrderReview component when actions is false
-jest.mock('../../orders/review', () => () => <div data-testid="order-review" />);
+jest.mock('../../orders/review', () => ({
+  __esModule: true,
+  Review: () => <div data-testid="order-review" />
+}));
+
 
 describe('CartItem component', () => {
   const baseCartItem = {

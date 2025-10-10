@@ -19,6 +19,7 @@ export default function ProductDescription({ id, handleShowPopup }) {
         const data = await res.json();
         setProduct(data);
       } catch (err) {
+        throw new Error("Failed to fetch product", err);
       }
 
       return function () {
